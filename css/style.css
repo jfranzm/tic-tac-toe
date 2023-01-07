@@ -24,6 +24,7 @@ h1 {
 }
 
 .placeholder {
+    display: flex;
     height: fill;
     width: fill;
     border-radius: 20px;
@@ -32,9 +33,22 @@ h1 {
     overflow: hidden;
     text-align: center;
     font-size: 100px;
+    font-family: 'Nunito', sans-serif;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0);
 }
 
 .placeholder:hover {
     background: rgb(163,234,251, 1);
+    transform: scale(1.05);
+    transition: 0.1s;
+}
 
+.red{
+    color: red;
+}
+
+.blue{
+    color:blue
 }
