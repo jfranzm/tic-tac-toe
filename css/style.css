@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 100px;
+    font-family: Arial;
+}
+
+#container {
+    height: 500px;
+    width: 500px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background: rgb(163,234,251);
+    background: radial-gradient(circle, rgba(163,234,251,1) 0%, rgba(65,194,227,1) 69%);
+}
+
+.placeholder {
+    height: fill;
+    width: fill;
+    border-radius: 20px;
+    background: rgb(163,234,251, 0.5);
+    transition: .1s;
+    overflow: hidden;
+    text-align: center;
+    font-size: 100px;
+}
+
+.placeholder:hover {
+    background: rgb(163,234,251, 1);
+
+}
