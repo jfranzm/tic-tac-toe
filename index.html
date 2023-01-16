@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div id="game-over">
+        <div id="winner"></div>
+        <button id="play-again">PLAY AGAIN</button>
+    </div>
     <h1>Tic-Tac-Toe</h1>
-
+    
     <div id="container">
         <div id="1" data-row="0" data-cloumn="0" class="placeholder">A</div>
         <div id='2' data-row="0" data-cloumn="1" class="placeholder">A</div>
@@ -24,5 +28,6 @@
 
     <input type="button" value="Reset data" onClick = "boardReset()">
 </body>
+<audio id='selection-sound' src="assets/soundfx/Pop sound effect.mp3"></audio>
 <script src="js/main.js"></script>
 </html>

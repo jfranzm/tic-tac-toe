@@ -12,16 +12,32 @@ function playerInput(){
         if (playersTurn == 'X'){
             tile.innerHTML = playersTurn;
             playersTurn = 'O';
-            tile.classList.add('red');
+            tile.classList.toggle('red');
+            selectionSound();
         }
         else{
             tile.innerHTML = playersTurn;
             playersTurn = 'X';
-            tile.classList.add('blue');
+            tile.classList.toggle('blue');
+            selectionSound();
         }
     }
     playersMove();
     return playersTurn
+}
+
+function boardReset() {
+    location.reload();
+}
+function selectionSound(){
+    let sound = document.getElementById('selection-sound');
+    sound.volume = 0.5;
+    sound.play();
+}
+
+function gameOver(){
+    document.getElementById('game-over').classList.toggle('game-over-tog');
+    boxes.disabled = true;
 }
 
 function playersMove(){
@@ -52,53 +68,87 @@ function playersMove(){
     let set7 = new Set(comboSeven);
     let set8 = new Set(comboEight);
 
-    if(!comboOne.includes('A')){
+    if(comboOne.includes('X')){
         if(parseInt(set1.size) == 1){
-            console.log('win');
+            console.log('X wins');
+            gameOver()
         }
     }
-    else if(!comboTwo.includes('A')){
+    else if(comboOne.includes('O')){
+        if(parseInt(set1.size) == 1){
+            console.log('O wins');
+            gameOver()
+        }
+    }
+    if(comboTwo.includes('X')){
         if(parseInt(set2.size) == 1){
-            console.log('win');
+            console.log('X win');
         }
     }
-    else if(!comboThree.includes('A')){
+    else if(comboTwo.includes('O')){
+        if(parseInt(set2.size) == 1){
+            console.log('O win');
+        }
+    }
+    if(comboThree.includes('X')){
         if(parseInt(set3.size) == 1){
-            console.log('win');
+            console.log('X win');
         }
     }
-    else if(!comboFour.includes('A')){
+    else if(comboThree.includes('O')){
+        if(parseInt(set3.size) == 1){
+            console.log('O win');
+        }
+    }
+    if(comboFour.includes('X')){
         if(parseInt(set4.size) == 1){
-            console.log('win');
+            console.log('X win');
         }
     }
-    else if(!comboFive.includes('A')){
-        if(parseInt(set1.size) == 1){
-            console.log('win');
+    else if(comboFour.includes('O')){
+        if(parseInt(set4.size) == 1){
+            console.log('O win');
         }
     }
-    else if(!comboSix.includes('A')){
+    if(comboFive.includes('X')){
+        if(parseInt(set5.size) == 1){
+            console.log('X win');
+        }
+    }
+    else if(comboFive.includes('O')){
+        if(parseInt(set5.size) == 1){
+            console.log('O win');
+        }
+    }
+    if(comboSix.includes('X')){
         if(parseInt(set6.size) == 1){
-            console.log('win');
+            console.log('X win');
         }
     }
-    else if(!comboSeven.includes('A')){
+    else if(comboSix.includes('O')){
+        if(parseInt(set6.size) == 1){
+            console.log('O win');
+        }
+    }
+    if(comboSeven.includes('X')){
         if(parseInt(set7.size) == 1){
-            console.log('win');
+            console.log('X win');
         }
     }
-    else if(!comboEight.includes('A')){
+    else if(comboSeven.includes('O')){
+        if(parseInt(set7.size) == 1){
+            console.log('O win');
+        }
+    }
+    if(comboEight.includes('X')){
         if(parseInt(set8.size) == 1){
-            console.log('win');
+            console.log('X win');
         }
     }
-    else if(!gameBoard.includes('A')){
-        if((parseInt(set1.size) != 1) && (parseInt(set2.size) != 1) && (parseInt(set3.size) != 1) && (parseInt(set4.size) != 1) && (parseInt(set5.size) != 1) && (parseInt(set6.size) != 1) && (parseInt(set7.size) != 1) && (parseInt(set8.size) != 1)){
-            console.log('tie...')
+    else if(comboEight.includes('O')){
+        if(parseInt(set8.size) == 1){
+            console.log('O win');
         }
     }
 }
 
-function boardReset(){
-    document.getElementsById('container').reset();
-}
